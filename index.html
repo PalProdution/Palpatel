@@ -1,119 +1,163 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="style.css">
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Website Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pal Patel 🌱 </title>
+    <script>
+        IconifyProviders = {
+            local: {
+                resources: ['http://localhost:3000'],
+            },
+        };
+    </script>
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+    <script src="https://kit.fontawesome.com/ed3d8378eb.js" crossorigin="anonymous"></script>
 
-  <!-- External CSS or Links -->
-  <link rel="stylesheet" href="styles.css">
-
-  <style>
-    /* Ensure that the page takes up the full height and hides overflow */
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-    }
-
-    /* Container for the particle animation (background) */
-    #app {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1; /* Ensure it stays in the background */
-    }
-
-    /* Main content styling */
-    .content {
-      position: relative;
-      z-index: 1; /* Keeps the content on top of the particles */
-      color: white;
-      font-size: 24px;
-      text-align: center;
-      padding-top: 50px;
-    }
-
-    /* Example styling for navigation links */
-    nav {
-      text-align: center;
-      margin: 20px 0;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      padding: 10px 20px;
-      margin: 0 10px;
-      font-size: 20px;
-    }
-
-    nav a:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-      border-radius: 5px;
-    }
-
-    /* Other styles you may have in your website */
-  </style>
+    <!-- <link rel="icon" type="image/png" href="logos/favicon.png" /> -->
+    <link rel="icon" type="image/png" href="logos/favicon.png" />
 </head>
-<body>
-  <!-- Particle Background Container -->
-  <div id="app"></div>
+<body id="homeNav">
+    <!-- Cursor for mouse -->
+    <div class="cursor"></div>
 
-  <!-- Your Page Content -->
-  <div class="content">
-    <h1>Welcome to My Website</h1>
-    <p>This is a sample page with a particle background animation.</p>
-    
-    <!-- Navigation Example -->
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <video poster="logos/A animated logo no-loop.gif" src="logos/logo.mp4" type="video/mp4" alt="logos/A animated logo no-loop.gif" muted autoplay>
+            </div>
+            <div class="navbar-main">
+                <a href="#" onclick="document.getElementById('homeNav').scrollIntoView();" id="First">Home &nbsp;</a>
+                <a href="#" onclick="document.getElementById('aboutMeNav').scrollIntoView();">About &nbsp;</a>
+                <a href="#" onclick="document.getElementById('educationNav').scrollIntoView();">Education &nbsp;</a>
+                <a href="#" onclick="document.getElementById('experienceNav').scrollIntoView();">Experience&nbsp;</a>
+                <a href="#" onclick="alert('Comming Soon!')">Projects&nbsp;</a>
+                <a href="#" onclick="alert('Comming Soon!')">Awards</a>
+            </div>
+        </div>
+    </header>
 
-  <!-- External JavaScript -->
-  <script type="module">
-    // Importing particle animation library
-    import { particlesCursor } from 'https://unpkg.com/threejs-toys@0.0.8/build/threejs-toys.module.cdn.min.js';
+    <!-- Gradient Background -->
+    <div class="gradient"></div>
 
-    // Initialize the particle animation when the window loads
-    window.addEventListener('load', () => {
-      const pc = particlesCursor({
-        el: document.getElementById('app'),
-        gpgpuSize: 512,
-        colors: [0x00ff00, 0x0000ff],
-        color: 0xff0000,
-        coordScale: 0.5,
-        noiseIntensity: 0.001,
-        noiseTimeCoef: 0.0001,
-        pointSize: 5,
-        pointDecay: 0.0025,
-        sleepRadiusX: 250,
-        sleepRadiusY: 250,
-        sleepTimeCoefX: 0.001,
-        sleepTimeCoefY: 0.002
-      });
+    <main>
+        <!-- Main content -->
+        <div class="main-content">
+            <div class="main-left">
+                <div class="profile-image">
+                    <img src="Images/circle_trans_top copy.png" alt="profile picture">
+                </div>
+            </div>
+            <div class="main-right">
+                <div class="quotation">
+                    <img src="Images/quotes.png" alt="">
+                </div>
+                <span class="content-area">
+                    <div class="content">
+                        <p>Hi</p>
+                        <span>👋</span>
+                        <p>I'm Pal Patel, a self-taught programmer with five years of experience.</p>
+                    </div>
+                </span>
+                <div class="handlesWrapper">
+                   <a target="_blank" href="https://www.linkedin.com/in/Palpatel142006/"> <i class="fa-brands fa-linkedin" style="color: #74C0FC;"></i></a>
+                    <a target="_blank" href="https://github.com/PalProdution"><i class="fa-brands fa-github" style="color: #74C0FC;"></i></a>
+                    <a href="#" onclick="navigator.clipboard.writeText('palpatel142006@gmail.com'); alert(' 📋 Email Coppied to Clippboard :)') "><i class="fa-solid fa-envelope" style="color: #74C0FC;"></i></a>
+                    <a target="_blank" href="https://guns.lol/accuratelive"><i class="fa-solid fa-file" style="color: #74C0FC;"></i></a>
+                </div>
+            </div>
+        </div>
 
-      // Optional: Allow for interactivity on click
-      document.body.addEventListener('click', () => {
-        pc.uniforms.uColor.value.set(Math.random() * 0xffffff);
-        pc.uniforms.uCoordScale.value = 0.001 + Math.random() * 2;
-        pc.uniforms.uNoiseIntensity.value = 0.0001 + Math.random() * 0.001;
-        pc.uniforms.uPointSize.value = 1 + Math.random() * 10;
-      });
-    });
-  </script>
+        <!-- About Me Section -->
+        <div class="quote" id="aboutMeNav">
+            <div class="quote-content">
+                <p>
+                    <p class="highlight"> Experience </p>
+                    &nbsp;<p>is</p>
+                    &nbsp;<p>the</p>
+                    &nbsp;<p>name</p>
+                    &nbsp;<p>everyone</p> 
+                    &nbsp;<p>gives</p>
+                    &nbsp;<p>to</p>
+                    &nbsp;<p>their</p>
+                    &nbsp;<p>mistakes</p>
+                    &nbsp;<p>and</p>
+                    &nbsp;<p>in</p>
+                    &nbsp;<p>order</p>
+                    &nbsp;<p>to</p>
+                    &nbsp;<p>be</p>
+                    &nbsp; <p class="highlight"> Irreplacable </p> 
+                    &nbsp;<p>one</p>
+                    &nbsp;<p>must</p>
+                    &nbsp;<p>always</p>
+                    &nbsp;<p>be</p>
+                    &nbsp;<p class="highlight">  Different </p> &nbsp; !
+                </p>
+            </div>
+        </div>
 
-  <!-- Optionally, link to any other scripts (e.g., analytics, or custom scripts) -->
-  <script src="scripts.js"></script>
+        <!-- Education Section -->
+        <div class="aboutMeWrapper">
+            <h1>About Me</h1>
+            <div class="aboutMeContent">
+                <p>I’m Pal—a tech enthusiast, lifelong learner, and someone who believes there’s no better feeling than cracking a tough problem with the perfect solution (especially if you do it in the first try) or turning complex challenges into creative solutions...</p>
+                <p>THAT'S HOW MUCH I LOVE WHAT I DO!</p>
+            </div>
+        </div>
+
+        <!-- Add more sections for education, experience, etc. -->
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footerContent">
+            <p>© 2025 Made with ♡ by Pal Patel</p>
+        </div>
+    </footer>
+
+    <!-- Particles Background Animation -->
+    <div id="app">
+        <div id="hero">
+            <a target="_blank" href="https://github.com/klevron/threejs-toys"></a>
+        </div>
+    </div>
+
+    <!-- Particles.js Script -->
+    <script src="https://unpkg.com/threejs-toys@0.0.8/build/threejs-toys.module.cdn.min.js"></script>
+    <script>
+        const pc = particlesCursor({
+            el: document.getElementById('app'),
+            gpgpuSize: 512,
+            colors: [0x00ff00, 0x0000ff],
+            color: 0xff0000,
+            coordScale: 0.5,
+            noiseIntensity: 0.001,
+            noiseTimeCoef: 0.0001,
+            pointSize: 5,
+            pointDecay: 0.0025,
+            sleepRadiusX: 250,
+            sleepRadiusY: 250,
+            sleepTimeCoefX: 0.001,
+            sleepTimeCoefY: 0.002
+        });
+        document.body.addEventListener('click', () => {
+            pc.uniforms.uColor.value.set(Math.random() * 0xffffff);
+            pc.uniforms.uCoordScale.value = 0.001 + Math.random() * 2;
+            pc.uniforms.uNoiseIntensity.value = 0.0001 + Math.random() * 0.001;
+            pc.uniforms.uPointSize.value = 1 + Math.random() * 10;
+        });
+    </script>
+
+    <!-- Custom Cursor Script -->
+    <script>
+        const cursor = document.querySelector(".cursor");
+        document.addEventListener("mousemove", (e) => {
+            cursor.style.left = e.pageX + "px";
+            cursor.style.top = e.pageY + "px";
+        });
+    </script>
+
 </body>
 </html>
- 
