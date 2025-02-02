@@ -1053,3 +1053,18 @@ body, html, #app {
   z-index: -1;
   top: 0;
 }
+/* Custom Cursor */
+html, body {
+    cursor: none; /* Hide default cursor */
+}
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    background-color: red; /* Change color as needed */
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
+}
